@@ -22,8 +22,8 @@ if __name__ == '__main__':
         raise
 
     # This allows easy placement of apps within the interior
-    # googappsprojectmanager directory.
+    # gooappsprojectmanager directory.
     current_path = os.path.dirname(os.path.abspath(__file__))
-    sys.path.append(os.path.join(current_path, 'googappsprojectmanager'))
+    sys.path.append(os.path.join(current_path, 'gooappsprojectmanager'))
 
     execute_from_command_line(sys.argv)

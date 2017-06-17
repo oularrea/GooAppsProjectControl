@@ -11,7 +11,7 @@ services:
       - postgres_data_dev:/var/lib/postgresql/data
       - postgres_backup_dev:/backups
     environment:
-      - POSTGRES_USER=googappsprojectmanager
+      - POSTGRES_USER=gooappsprojectmanager
 
   django:
     build:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - POSTGRES_USER=googappsprojectmanager
+      - POSTGRES_USER=gooappsprojectmanager
       - USE_DOCKER=yes
     volumes:
       - .:/app
@@ -36,7 +36,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - POSTGRES_USER=googappsprojectmanager
+      - POSTGRES_USER=gooappsprojectmanager
     volumes:
       - .:/app
 

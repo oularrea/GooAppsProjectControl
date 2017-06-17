@@ -183,7 +183,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
     ('index',
-     'googappsprojectmanager.tex',
+     'gooappsprojectmanager.tex',
      'GooAppsProjectManager Documentation',
      """Osvaldo Ulises Larrea Armenteros""", 'manual'),
 ]
@@ -214,7 +214,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'googappsprojectmanager', 'GooAppsProjectManager Documentation',
+    ('index', 'gooappsprojectmanager', 'GooAppsProjectManager Documentation',
      ["""Osvaldo Ulises Larrea Armenteros"""], 1)
 ]
 
@@ -228,7 +228,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'googappsprojectmanager', 'GooAppsProjectManager Documentation',
+    ('index', 'gooappsprojectmanager', 'GooAppsProjectManager Documentation',
      """Osvaldo Ulises Larrea Armenteros""", 'GooAppsProjectManager',
      """Control project""", 'Miscellaneous'),
 ]

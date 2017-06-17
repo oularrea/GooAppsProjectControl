@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class UsersConfig(AppConfig):
-    name = 'googappsprojectmanager.users'
+    name = 'gooappsprojectmanager.users'
     verbose_name = "Users"
 
     def ready(self):

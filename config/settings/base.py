@@ -9,23 +9,23 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3  # (googappsprojectmanager/config/settings/base.py - 3 = googappsprojectmanager/)
-APPS_DIR = ROOT_DIR.path('googappsprojectmanager')
+ROOT_DIR = environ.Path(__file__) - 3  # (gooappsprojectmanager/config/settings/base.py - 3 = gooappsprojectmanager/)
+APPS_DIR = ROOT_DIR.path('gooappsprojectmanager')
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
 
-# .env file, should load only in development environment
+# env.example file, should load only in development environment
 READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=False)
 
 if READ_DOT_ENV_FILE:
-    # Operating System Environment variables have precedence over variables defined in the .env file,
-    # that is to say variables from the .env files will only be used if not defined
+    # Operating System Environment variables have precedence over variables defined in the env.example file,
+    # that is to say variables from the env.example files will only be used if not defined
     # as environment variables.
-    env_file = str(ROOT_DIR.path('.env'))
+    env_file = str(ROOT_DIR.path('env.example'))
     print('Loading : {}'.format(env_file))
     env.read_env(env_file)
-    print('The .env file has been loaded. See base.py for more information')
+    print('The env.example file has been loaded. See base.py for more information')
 
 # APP CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -54,7 +54,8 @@ THIRD_PARTY_APPS = [
 # Apps specific for this project go here.
 LOCAL_APPS = [
     # custom users app
-    'googappsprojectmanager.users.apps.UsersConfig',
+    'gooappsprojectmanager.users.apps.UsersConfig',
+    'gooappsprojectmanager.projects.apps.ProjectsConfig',
     # Your stuff: custom apps go here
 ]
 
@@ -76,7 +77,7 @@ MIDDLEWARE = [
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'googappsprojectmanager.contrib.sites.migrations'
+    'sites': 'gooappsprojectmanager.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -109,7 +110,7 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///googappsprojectmanager'),
+    'default': env.db('DATABASE_URL', default='postgres://postgres:postgres@127.0.0.1:5432/gooappsprojectmanager'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -120,10 +121,10 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Europa/Madrid'
+TIME_ZONE = 'Europe/Madrid'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
@@ -253,8 +254,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
-ACCOUNT_ADAPTER = 'googappsprojectmanager.users.adapters.AccountAdapter'
-SOCIALACCOUNT_ADAPTER = 'googappsprojectmanager.users.adapters.SocialAccountAdapter'
+ACCOUNT_ADAPTER = 'gooappsprojectmanager.users.adapters.AccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'gooappsprojectmanager.users.adapters.SocialAccountAdapter'
 
 # Custom user app defaults
 # Select the correct user model

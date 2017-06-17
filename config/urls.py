@@ -13,7 +13,8 @@ urlpatterns = [
     url(settings.ADMIN_URL, admin.site.urls),
 
     # User management
-    url(r'^users/', include('googappsprojectmanager.users.urls', namespace='users')),
+    url(r'^users/', include('gooappsprojectmanager.users.urls', namespace='users')),
+    url(r'^projects/', include('gooappsprojectmanager.projects.urls', namespace='projects')),
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
